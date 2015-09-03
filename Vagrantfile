@@ -26,4 +26,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet.manifest_file  = "init.pp"
   end
 
+  config.vm.provision :shell, path: "install-rvm.sh", args: "stable"
+  config.vm.provision :shell, path: "install-ruby.sh", args: "2.2.1 mailcatcher"
+
 end
